@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: read
+  id-token: write
+  issues: write
+  pull-requests: read
+  checks: read
+  statuses: read
+
+jobs:
+  prepare:
+    if: github.event.label.name == 'release:prepare'
+    uses: connectbot/release-action/.github/workflows/prepare-release.yml@2085a1d6887933a5e65e1007dd446bb07b3b6067 # main
+    with:
+      tag_prefix: v
+      gradle_no_push_prop: release.noPush
+
+  publish:
+    if: github.event.label.name == 'release:publish'
+    uses: connectbot/release-action/.github/workflows/publish-release.yml@2085a1d6887933a5e65e1007dd446bb07b3b6067 # main
+    with:
+      tag_prefix: v
+
+  branch:
+    if: github.event.label.name == 'release:branch'
+    uses: connectbot/release-action/.github/workflows/release-branch.yml@2085a1d6887933a5e65e1007dd446bb07b3b6067 # main

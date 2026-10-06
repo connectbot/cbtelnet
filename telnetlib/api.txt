@@ -1,0 +1,344 @@
+// Signature format: 4.0
+package org.connectbot.telnetlib {
+
+  public enum NewlinePolicy {
+    enum_constant public static final org.connectbot.telnetlib.NewlinePolicy LF_TO_CRLF;
+    enum_constant public static final org.connectbot.telnetlib.NewlinePolicy PRESERVE_LF;
+  }
+
+  public enum NonBinaryPolicy {
+    enum_constant public static final org.connectbot.telnetlib.NonBinaryPolicy EIGHT_BIT_COMPATIBILITY;
+    enum_constant public static final org.connectbot.telnetlib.NonBinaryPolicy STRICT_ASCII;
+  }
+
+  public enum TelnetCommand {
+    method @InaccessibleFromKotlin public int getCode();
+    property public int code;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand ABORT_OUTPUT;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand ARE_YOU_THERE;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand BREAK;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand DATA_MARK;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand ERASE_CHARACTER;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand ERASE_LINE;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand GO_AHEAD;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand INTERRUPT_PROCESS;
+    enum_constant public static final org.connectbot.telnetlib.TelnetCommand NOP;
+  }
+
+  public final class TelnetConfig {
+    ctor public TelnetConfig();
+    ctor public TelnetConfig(optional java.util.List<java.lang.String> terminalTypes, optional int columns, optional int rows, optional org.connectbot.telnetlib.TelnetProfile profile, optional org.connectbot.telnetlib.NonBinaryPolicy nonBinaryPolicy, optional org.connectbot.telnetlib.NewlinePolicy newlinePolicy, optional boolean consumeRecords, optional java.lang.String? charset, optional int maxSubnegotiationBytes, optional int inputBudgetBytes, optional int outputBudgetBytes, optional int maxPendingEvents, optional int controlBudgetBytes, optional long charsetTimeoutMillis, optional long closeTimeoutMillis);
+    method @InaccessibleFromKotlin public java.lang.String? getCharset();
+    method @InaccessibleFromKotlin public long getCharsetTimeoutMillis();
+    method @InaccessibleFromKotlin public long getCloseTimeoutMillis();
+    method @InaccessibleFromKotlin public int getColumns();
+    method @InaccessibleFromKotlin public boolean getConsumeRecords();
+    method @InaccessibleFromKotlin public int getControlBudgetBytes();
+    method @InaccessibleFromKotlin public int getInputBudgetBytes();
+    method @InaccessibleFromKotlin public int getMaxPendingEvents();
+    method @InaccessibleFromKotlin public int getMaxSubnegotiationBytes();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.NewlinePolicy getNewlinePolicy();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.NonBinaryPolicy getNonBinaryPolicy();
+    method @InaccessibleFromKotlin public int getOutputBudgetBytes();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetProfile getProfile();
+    method @InaccessibleFromKotlin public int getRows();
+    method @InaccessibleFromKotlin public java.util.List<java.lang.String> getTerminalTypes();
+    property public String? charset;
+    property public long charsetTimeoutMillis;
+    property public long closeTimeoutMillis;
+    property public int columns;
+    property public boolean consumeRecords;
+    property public int controlBudgetBytes;
+    property public int inputBudgetBytes;
+    property public int maxPendingEvents;
+    property public int maxSubnegotiationBytes;
+    property public org.connectbot.telnetlib.NewlinePolicy newlinePolicy;
+    property public org.connectbot.telnetlib.NonBinaryPolicy nonBinaryPolicy;
+    property public int outputBudgetBytes;
+    property public org.connectbot.telnetlib.TelnetProfile profile;
+    property public int rows;
+    property public java.util.List<java.lang.String> terminalTypes;
+  }
+
+  public enum TelnetDirection {
+    enum_constant public static final org.connectbot.telnetlib.TelnetDirection LOCAL;
+    enum_constant public static final org.connectbot.telnetlib.TelnetDirection REMOTE;
+  }
+
+  public sealed exhaustive interface TelnetEffect {
+  }
+
+  public static final class TelnetEffect.Input implements org.connectbot.telnetlib.TelnetEffect {
+    ctor public TelnetEffect.Input(org.connectbot.telnetlib.TelnetInput value);
+    method public org.connectbot.telnetlib.TelnetInput component1();
+    method public org.connectbot.telnetlib.TelnetEffect.Input copy(optional org.connectbot.telnetlib.TelnetInput value);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetInput getValue();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public org.connectbot.telnetlib.TelnetInput value;
+  }
+
+  public static final class TelnetEffect.Outbound implements org.connectbot.telnetlib.TelnetEffect {
+    ctor public TelnetEffect.Outbound(byte[] bytes);
+    method public byte[] component1();
+    method public org.connectbot.telnetlib.TelnetEffect.Outbound copy(optional byte[] bytes);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public byte[] getBytes();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public byte[] bytes;
+  }
+
+  public static final class TelnetEffect.StateChanged implements org.connectbot.telnetlib.TelnetEffect {
+    ctor public TelnetEffect.StateChanged(org.connectbot.telnetlib.TelnetSnapshot snapshot);
+    method public org.connectbot.telnetlib.TelnetSnapshot component1();
+    method public org.connectbot.telnetlib.TelnetEffect.StateChanged copy(optional org.connectbot.telnetlib.TelnetSnapshot snapshot);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetSnapshot getSnapshot();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public org.connectbot.telnetlib.TelnetSnapshot snapshot;
+  }
+
+  public final class TelnetEngine {
+    method public org.connectbot.telnetlib.TelnetResult carriageReturn();
+    method public org.connectbot.telnetlib.TelnetResult feed(byte[] bytes, optional int offset, optional int length);
+    method public org.connectbot.telnetlib.TelnetResult feed(ByteBuffer buffer);
+    method public org.connectbot.telnetlib.TelnetResult finish();
+    method public org.connectbot.telnetlib.TelnetResult flush();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetConfig getConfig();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetSnapshot getSnapshot();
+    method public boolean isEnabled(org.connectbot.telnetlib.TelnetOption option, org.connectbot.telnetlib.TelnetDirection direction);
+    method public org.connectbot.telnetlib.TelnetResult requestOption(org.connectbot.telnetlib.TelnetOption option, org.connectbot.telnetlib.TelnetDirection direction, boolean enable);
+    method public org.connectbot.telnetlib.TelnetResult resize(int columns, int rows);
+    method public org.connectbot.telnetlib.TelnetResult sendCommand(org.connectbot.telnetlib.TelnetCommand command);
+    method public org.connectbot.telnetlib.TelnetResult start();
+    method public org.connectbot.telnetlib.TelnetResult timeoutCharset();
+    method public org.connectbot.telnetlib.TelnetResult write(byte[] bytes, optional int offset, optional int length);
+    property public org.connectbot.telnetlib.TelnetConfig config;
+    property public org.connectbot.telnetlib.TelnetSnapshot snapshot;
+    field public static final int CHUNK_SIZE = 8192; // 0x2000
+    field public static final org.connectbot.telnetlib.TelnetEngine.Companion Companion;
+  }
+
+  public static final class TelnetEngine.Companion {
+    property public static int CHUNK_SIZE;
+  }
+
+  public final class TelnetEngineKt {
+    method public static org.connectbot.telnetlib.TelnetEngine createTelnetEngine(optional org.connectbot.telnetlib.TelnetConfig config);
+  }
+
+  public final class TelnetFailure {
+    ctor public TelnetFailure(org.connectbot.telnetlib.TelnetFailureCode code, java.lang.String message);
+    method public org.connectbot.telnetlib.TelnetFailureCode component1();
+    method public java.lang.String component2();
+    method public org.connectbot.telnetlib.TelnetFailure copy(optional org.connectbot.telnetlib.TelnetFailureCode code, optional java.lang.String message);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetFailureCode getCode();
+    method @InaccessibleFromKotlin public java.lang.String getMessage();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public org.connectbot.telnetlib.TelnetFailureCode code;
+    property public String message;
+  }
+
+  public enum TelnetFailureCode {
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode BUFFER_LIMIT;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode CHARSET_TIMEOUT;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode CLOSED;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode CONNECT_TIMEOUT;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode INTERNAL_ERROR;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode NON_ASCII_DATA;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode PROTOCOL_ERROR;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode TRANSPORT_ERROR;
+    enum_constant public static final org.connectbot.telnetlib.TelnetFailureCode UNSUPPORTED_OPERATION;
+  }
+
+  public sealed exhaustive interface TelnetInput {
+  }
+
+  public static final class TelnetInput.CharsetAgreed implements org.connectbot.telnetlib.TelnetInput {
+    ctor public TelnetInput.CharsetAgreed(java.lang.String name);
+    method public java.lang.String component1();
+    method public org.connectbot.telnetlib.TelnetInput.CharsetAgreed copy(optional java.lang.String name);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public java.lang.String getName();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public String name;
+  }
+
+  public static final class TelnetInput.Data implements org.connectbot.telnetlib.TelnetInput {
+    ctor public TelnetInput.Data(byte[] bytes);
+    method public byte[] component1();
+    method public org.connectbot.telnetlib.TelnetInput.Data copy(optional byte[] bytes);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public byte[] getBytes();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public byte[] bytes;
+  }
+
+  public static final class TelnetInput.Diagnostic implements org.connectbot.telnetlib.TelnetInput {
+    ctor public TelnetInput.Diagnostic(java.lang.String message);
+    method public java.lang.String component1();
+    method public org.connectbot.telnetlib.TelnetInput.Diagnostic copy(optional java.lang.String message);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public java.lang.String getMessage();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public String message;
+  }
+
+  public static final class TelnetInput.EchoChanged implements org.connectbot.telnetlib.TelnetInput {
+    ctor public TelnetInput.EchoChanged(boolean localEcho);
+    method public boolean component1();
+    method public org.connectbot.telnetlib.TelnetInput.EchoChanged copy(optional boolean localEcho);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public boolean getLocalEcho();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public boolean localEcho;
+  }
+
+  public static final class TelnetInput.EndOfRecord implements org.connectbot.telnetlib.TelnetInput {
+    method public boolean equals(java.lang.Object? other);
+    method public int hashCode();
+    method public java.lang.String toString();
+    field public static final org.connectbot.telnetlib.TelnetInput.EndOfRecord INSTANCE;
+  }
+
+  public static final class TelnetInput.GoAhead implements org.connectbot.telnetlib.TelnetInput {
+    method public boolean equals(java.lang.Object? other);
+    method public int hashCode();
+    method public java.lang.String toString();
+    field public static final org.connectbot.telnetlib.TelnetInput.GoAhead INSTANCE;
+  }
+
+  public enum TelnetOption {
+    method @InaccessibleFromKotlin public int getCode();
+    property public int code;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption BINARY;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption CHARSET;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption ECHO;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption EOR;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption NAWS;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption SGA;
+    enum_constant public static final org.connectbot.telnetlib.TelnetOption TTYPE;
+  }
+
+  public sealed exhaustive interface TelnetOutcome<T> {
+  }
+
+  public static final class TelnetOutcome.Failure implements org.connectbot.telnetlib.TelnetOutcome {
+    ctor public TelnetOutcome.Failure(org.connectbot.telnetlib.TelnetFailure error);
+    method public org.connectbot.telnetlib.TelnetFailure component1();
+    method public org.connectbot.telnetlib.TelnetOutcome.Failure copy(optional org.connectbot.telnetlib.TelnetFailure error);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetFailure getError();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public org.connectbot.telnetlib.TelnetFailure error;
+  }
+
+  public static final class TelnetOutcome.Success<T> implements org.connectbot.telnetlib.TelnetOutcome<T> {
+    ctor public TelnetOutcome.Success(T value);
+    method public T component1();
+    method public org.connectbot.telnetlib.TelnetOutcome.Success<T> copy(optional T value);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public T getValue();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public T value;
+  }
+
+  public enum TelnetProfile {
+    enum_constant public static final org.connectbot.telnetlib.TelnetProfile INTERACTIVE;
+    enum_constant public static final org.connectbot.telnetlib.TelnetProfile PASSIVE;
+  }
+
+  public final class TelnetResult {
+    ctor public TelnetResult(int consumed, java.util.List<? extends org.connectbot.telnetlib.TelnetEffect> effects, optional org.connectbot.telnetlib.TelnetFailure? failure);
+    method public int component1();
+    method public java.util.List<org.connectbot.telnetlib.TelnetEffect> component2();
+    method public org.connectbot.telnetlib.TelnetFailure? component3();
+    method public org.connectbot.telnetlib.TelnetResult copy(optional int consumed, optional java.util.List<? extends org.connectbot.telnetlib.TelnetEffect> effects, optional org.connectbot.telnetlib.TelnetFailure? failure);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public int getConsumed();
+    method @InaccessibleFromKotlin public java.util.List<org.connectbot.telnetlib.TelnetEffect> getEffects();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetFailure? getFailure();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public int consumed;
+    property public java.util.List<org.connectbot.telnetlib.TelnetEffect> effects;
+    property public org.connectbot.telnetlib.TelnetFailure? failure;
+  }
+
+  public interface TelnetSession {
+    method public suspend java.lang.Object? carriageReturn(kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public suspend java.lang.Object? close(kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public suspend java.lang.Object? flush(kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public default java.net.InetSocketAddress? getLocalSocketAddress();
+    method @InaccessibleFromKotlin public kotlinx.coroutines.flow.StateFlow<org.connectbot.telnetlib.TelnetSnapshot> getState();
+    method public suspend java.lang.Object? receive(kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<? extends org.connectbot.telnetlib.TelnetInput?>>);
+    method public suspend java.lang.Object? requestOption(org.connectbot.telnetlib.TelnetOption option, org.connectbot.telnetlib.TelnetDirection direction, boolean enable, kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public suspend java.lang.Object? resize(int columns, int rows, kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public suspend java.lang.Object? sendCommand(org.connectbot.telnetlib.TelnetCommand command, kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    method public suspend java.lang.Object? write(byte[] data, optional int offset, optional int length, kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<kotlin.Unit>>);
+    property public abstract kotlinx.coroutines.flow.StateFlow<org.connectbot.telnetlib.TelnetSnapshot> state;
+  }
+
+  public final class TelnetSessionKt {
+    method public static org.connectbot.telnetlib.TelnetSession openTelnetSession(kotlinx.coroutines.CoroutineScope scope, org.connectbot.telnetlib.TelnetTransport transport, optional org.connectbot.telnetlib.TelnetConfig config, optional kotlin.coroutines.CoroutineContext workerContext);
+  }
+
+  public final class TelnetSnapshot {
+    ctor public TelnetSnapshot();
+    ctor public TelnetSnapshot(optional org.connectbot.telnetlib.TelnetStatus status, optional boolean localEcho, optional boolean incomingBinary, optional boolean outgoingBinary, optional java.lang.String? charset, optional boolean charsetPending, optional org.connectbot.telnetlib.TelnetFailure? failure);
+    method public org.connectbot.telnetlib.TelnetStatus component1();
+    method public boolean component2();
+    method public boolean component3();
+    method public boolean component4();
+    method public java.lang.String? component5();
+    method public boolean component6();
+    method public org.connectbot.telnetlib.TelnetFailure? component7();
+    method public org.connectbot.telnetlib.TelnetSnapshot copy(optional org.connectbot.telnetlib.TelnetStatus status, optional boolean localEcho, optional boolean incomingBinary, optional boolean outgoingBinary, optional java.lang.String? charset, optional boolean charsetPending, optional org.connectbot.telnetlib.TelnetFailure? failure);
+    method public boolean equals(java.lang.Object? other);
+    method @InaccessibleFromKotlin public java.lang.String? getCharset();
+    method @InaccessibleFromKotlin public boolean getCharsetPending();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetFailure? getFailure();
+    method @InaccessibleFromKotlin public boolean getIncomingBinary();
+    method @InaccessibleFromKotlin public boolean getLocalEcho();
+    method @InaccessibleFromKotlin public boolean getOutgoingBinary();
+    method @InaccessibleFromKotlin public org.connectbot.telnetlib.TelnetStatus getStatus();
+    method public int hashCode();
+    method public java.lang.String toString();
+    property public String? charset;
+    property public boolean charsetPending;
+    property public org.connectbot.telnetlib.TelnetFailure? failure;
+    property public boolean incomingBinary;
+    property public boolean localEcho;
+    property public boolean outgoingBinary;
+    property public org.connectbot.telnetlib.TelnetStatus status;
+  }
+
+  public enum TelnetStatus {
+    enum_constant public static final org.connectbot.telnetlib.TelnetStatus CANCELLED;
+    enum_constant public static final org.connectbot.telnetlib.TelnetStatus FAILED;
+    enum_constant public static final org.connectbot.telnetlib.TelnetStatus LOCAL_CLOSED;
+    enum_constant public static final org.connectbot.telnetlib.TelnetStatus OPEN;
+    enum_constant public static final org.connectbot.telnetlib.TelnetStatus PEER_EOF;
+  }
+
+  public interface TelnetTransport {
+    method public suspend java.lang.Object? close(kotlin.coroutines.Continuation<? super kotlin.Unit>);
+    method public suspend java.lang.Object? flush(kotlin.coroutines.Continuation<? super kotlin.Unit>);
+    method public default java.net.InetSocketAddress? getLocalSocketAddress();
+    method public suspend java.lang.Object? read(byte[] destination, int offset, int length, kotlin.coroutines.Continuation<? super java.lang.Integer>);
+    method public suspend java.lang.Object? write(byte[] source, int offset, int length, kotlin.coroutines.Continuation<? super kotlin.Unit>);
+  }
+
+}
+

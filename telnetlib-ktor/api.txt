@@ -1,0 +1,9 @@
+// Signature format: 4.0
+package org.connectbot.telnetlib.ktor {
+
+  public final class KtorTelnetKt {
+    method public static suspend java.lang.Object? connectTelnet(kotlinx.coroutines.CoroutineScope scope, java.lang.String host, optional int port, optional org.connectbot.telnetlib.TelnetConfig config, optional kotlin.coroutines.CoroutineContext ioContext, optional long connectTimeoutMillis, kotlin.coroutines.Continuation<? super org.connectbot.telnetlib.TelnetOutcome<? extends org.connectbot.telnetlib.TelnetSession>>);
+  }
+
+}
+
