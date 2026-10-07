@@ -1,0 +1,351 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>TelnetEngine</title>
+<link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer></script></head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+<a class="library-name--link" href="../../../index.html" tabindex="1">
+                    ConnectBot Telnet
+            </a>        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle" type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">main
+        </div>
+        <div class="navigation-controls">
+        <ul class="filter-section filter-section_loading" id="filter-section" aria-label="Target filter">
+                <button class="platform-tag platform-selector jvm-like" data-active="" aria-pressed="true" data-filter=":telnetlib/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox" data-role="dropdown-toggle" aria-controls="platform-tags-listbox" aria-haspopup="listbox" aria-expanded="false" aria-label="Toggle source sets"></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox" aria-label="Target filter">
+                    <div class="dropdown--header"><span>Target filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close target filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":telnetlib/main" data-filter=":telnetlib/main">
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </ul>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button" type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config="{&quot;defaultSize&quot;: 280, &quot;minSize&quot;: 200, &quot;maxSize&quot;: 400}">
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list" data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    ConnectBot Telnet
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" data-page-type="classlike" id="content" pageids="ConnectBot Telnet Library::org.connectbot.telnetlib/TelnetEngine///PointingToDeclaration//-1317821935">
+  <div class="breadcrumbs"><a href="../../index.html">ConnectBot Telnet Library</a><span class="delimiter">/</span><a href="../index.html">org.connectbot.telnetlib</a><span class="delimiter">/</span><span class="current">TelnetEngine</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Telnet</span><wbr><span><span>Engine</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">TelnetEngine</a><span class="source-link-wrapper"><span class="source-link" data-element-type="source-link">(<a href="https://github.com/connectbot/cbtelnet/blob/3777dc94a906a79bb2cebfb4c87de590a1e1f682/telnetlib/src/main/kotlin/org/connectbot/telnetlib/TelnetEngine.kt#L51">source</a>)</span></span></div><p class="paragraph">Deterministic, single-owner client engine. No sockets, callbacks, or coroutine state. Feed at most <a href="-companion/-c-h-u-n-k_-s-i-z-e.html">CHUNK_SIZE</a> bytes per step; repeat with the unconsumed suffix. A result consumes input or reports a terminal failure; empty input is a no-op. Call <a href="start.html">start</a> once before other operations and <a href="finish.html">finish</a> once at peer EOF. Invalid slices, dimensions and oversized writes throw IllegalArgumentException. Starting twice or using an unstarted engine throws IllegalStateException.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="tableheader">Types</h2>
+        <div class="table"><a data-name="1120707228%2FClasslikes%2F-1317821935" anchor-label="Companion" id="1120707228%2FClasslikes%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1120707228%2FClasslikes%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="tableheader">Properties</h2>
+        <div class="table"><a data-name="1522624547%2FProperties%2F-1317821935" anchor-label="config" id="1522624547%2FProperties%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="config.html"><span><span>config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1522624547%2FProperties%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="config.html">config</a><span class="token operator">: </span><a href="../-telnet-config/index.html">TelnetConfig</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1378472417%2FProperties%2F-1317821935" anchor-label="snapshot" id="1378472417%2FProperties%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="snapshot.html"><span><span>snapshot</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1378472417%2FProperties%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="snapshot.html">snapshot</a><span class="token operator">: </span><a href="../-telnet-snapshot/index.html">TelnetSnapshot</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="tableheader">Functions</h2>
+        <div class="table"><a data-name="1192309569%2FFunctions%2F-1317821935" anchor-label="carriageReturn" id="1192309569%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="carriage-return.html"><span>carriage</span><wbr><span><span>Return</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1192309569%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="carriage-return.html"><span class="token function">carriageReturn</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1090369662%2FFunctions%2F-1317821935" anchor-label="feed" id="-1090369662%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="feed.html"><span><span>feed</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1090369662%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="feed.html"><span class="token function">feed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">buffer<span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/ByteBuffer.html">ByteBuffer</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div><div class="brief "><p class="paragraph">Advances position by consumed bytes; never changes limit or retains the buffer.</p></div><div class="symbol monospace"><span class="token keyword">fun </span><a href="feed.html"><span class="token function">feed</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bytes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a><span class="token punctuation">, </span></span><span class="parameter ">offset<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">length<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>bytes.size - offset</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1494823950%2FFunctions%2F-1317821935" anchor-label="finish" id="-1494823950%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="finish.html"><span><span>finish</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1494823950%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="finish.html"><span class="token function">finish</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div><div class="brief "><p class="paragraph">Completes valid data and diagnoses a truncated control without dispatching partial SB.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="62115537%2FFunctions%2F-1317821935" anchor-label="flush" id="62115537%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flush.html"><span><span>flush</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="62115537%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="flush.html"><span class="token function">flush</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-240206407%2FFunctions%2F-1317821935" anchor-label="isEnabled" id="-240206407%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="is-enabled.html"><span>is</span><wbr><span><span>Enabled</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-240206407%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="is-enabled.html"><span class="token function">isEnabled</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">option<span class="token operator">: </span><a href="../-telnet-option/index.html">TelnetOption</a><span class="token punctuation">, </span></span><span class="parameter ">direction<span class="token operator">: </span><a href="../-telnet-direction/index.html">TelnetDirection</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="886250008%2FFunctions%2F-1317821935" anchor-label="requestOption" id="886250008%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="request-option.html"><span>request</span><wbr><span><span>Option</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="886250008%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="request-option.html"><span class="token function">requestOption</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">option<span class="token operator">: </span><a href="../-telnet-option/index.html">TelnetOption</a><span class="token punctuation">, </span></span><span class="parameter ">direction<span class="token operator">: </span><a href="../-telnet-direction/index.html">TelnetDirection</a><span class="token punctuation">, </span></span><span class="parameter ">enable<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1275293010%2FFunctions%2F-1317821935" anchor-label="resize" id="-1275293010%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="resize.html"><span><span>resize</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1275293010%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="resize.html"><span class="token function">resize</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">columns<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">rows<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="254798939%2FFunctions%2F-1317821935" anchor-label="sendCommand" id="254798939%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="send-command.html"><span>send</span><wbr><span><span>Command</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="254798939%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="send-command.html"><span class="token function">sendCommand</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">command<span class="token operator">: </span><a href="../-telnet-command/index.html">TelnetCommand</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1669458739%2FFunctions%2F-1317821935" anchor-label="start" id="1669458739%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="start.html"><span><span>start</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1669458739%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="start.html"><span class="token function">start</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1789120806%2FFunctions%2F-1317821935" anchor-label="timeoutCharset" id="-1789120806%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="timeout-charset.html"><span>timeout</span><wbr><span><span>Charset</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1789120806%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="timeout-charset.html"><span class="token function">timeoutCharset</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1749712686%2FFunctions%2F-1317821935" anchor-label="write" id="-1749712686%2FFunctions%2F-1317821935" data-filterable-set=":telnetlib/main"></a>
+          <div class="table-row table-row_content" data-filterable-current=":telnetlib/main" data-filterable-set=":telnetlib/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="write.html"><span><span>write</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1749712686%2FFunctions%2F-1317821935"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":telnetlib/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="write.html"><span class="token function">write</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">bytes<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-byte-array/index.html">ByteArray</a><span class="token punctuation">, </span></span><span class="parameter ">offset<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span><span class="token constant">0</span><span class="token punctuation">, </span></span><span class="parameter ">length<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator"> = </span>bytes.size - offset</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-telnet-result/index.html">TelnetResult</a></div><div class="brief "><p class="paragraph">Encodes one bounded application slice. A trailing raw CR is paired by the next write or flush.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright Kenny Root</div>
+                    <div>
+                        <a class="footer--link" id="markdown-link" href="index.md">View as Markdown</a>
+                        <script>
+                            document.getElementById("markdown-link").href =
+                                location.pathname.split("/").pop().replace(/\.html$/, ".md") || "index.md";
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>All modules</title>
+    <link href="images/logo-icon.svg" rel="icon" type="image/svg">
+        <script>var pathToRoot = "";</script>
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+      if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      } else {
+        const savedDarkMode = JSON.parse(storage)
+        if (savedDarkMode === true) {
+          document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+      }
+    </script>
+<script type="text/javascript" src="scripts/sourceset_dependencies.js" async="async"></script>
+<link href="styles/style.css" rel="Stylesheet">
+<link href="styles/main.css" rel="Stylesheet">
+<link href="styles/prism.css" rel="Stylesheet">
+<link href="styles/logo-styles.css" rel="Stylesheet">
+<link href="ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="scripts/safe-local-storage_blocking.js"></script>
+<script type="text/javascript" src="scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
+</head>
+<body>
+<div class="root">
+    <header class="navigation theme-dark" id="navigation-wrapper" role="banner">
+            <a class="library-name--link" href="index.html" tabindex="1">
+                    ConnectBot Telnet
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+main        </div>
+        <div class="navigation-controls">
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </header>
+    <div id="container">
+        <nav id="leftColumn" class="sidebar" data-item-type="SECTION" data-item-config='{"defaultSize": 280, "minSize": 200, "maxSize": 400}'>
+            <a class="toc--skip-link" href="#main">Skip to content</a>
+            <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                    data-role="dropdown-listbox" aria-label="Table of contents">
+                    <div class="dropdown--header">
+                            <span>
+                                    ConnectBot Telnet
+                            </span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar--inner" id="sideMenu"></div>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </nav>
+        <div id="resizer" class="resizer" data-item-type="BAR"></div>
+        <div id="main" data-item-type="SECTION" role="main">
+<div class="main-content" id="content" pageIds="ConnectBot Telnet::.ext/allModules///PointingToDeclaration//0">
+  <div class="breadcrumbs"></div>
+  <div class="cover ">
+    <div class="cover ">
+      <h1 class="">ConnectBot Telnet Library</h1>
+      <p class="paragraph">A Kotlin/JVM Telnet <strong>client</strong> library with a byte-driven engine, an ordered coroutine session, and an optional Ktor TCP backend.</p>
+      <p class="paragraph"><a href="https://telnetlib.connectbot.org">Documentation</a> includes the development version from <code class="lang-kotlin">main</code> and every tagged release, with HTML and Markdown API references for both modules.</p>
+      <h2 class="">Dependencies</h2>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">dependencies {<br>    implementation(&quot;org.connectbot.telnetlib:telnetlib:VERSION&quot;)<br>    // Add only when the library should own a TCP connection:<br>    implementation(&quot;org.connectbot.telnetlib:telnetlib-ktor:VERSION&quot;)<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">Both coordinates share a version. The core depends on Kotlin coroutines and has no Ktor dependency. These coordinates describe the configured Maven publications.</p>
+      <h2 class="">Explicit outcomes</h2>
+      <p class="paragraph">Operational failures are returned as <code class="lang-kotlin">TelnetOutcome</code> values. Invalid configuration, byte slices, dimensions, and endpoint arguments throw <code class="lang-kotlin">IllegalArgumentException</code>; invalid engine lifecycle and concurrent receivers throw <code class="lang-kotlin">IllegalStateException</code>.  These are programming preconditions, following Kotlin's <code class="lang-kotlin">require</code>/<code class="lang-kotlin">check</code> conventions.  <code class="lang-kotlin">TelnetConfig</code> validates when constructed. <code class="lang-kotlin">createTelnetEngine</code> and <code class="lang-kotlin">openTelnetSession</code> return their objects directly; <code class="lang-kotlin">connectTelnet</code> returns an outcome because connection can fail during normal use.</p>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">when (val result = session.resize(columns, rows)) {<br>    is TelnetOutcome.Success -&gt; Unit<br>    is TelnetOutcome.Failure -&gt; handleFailure(result.error.code, result.error.message)<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">Engine operations return <code class="lang-kotlin">TelnetResult</code>, including consumption, ordered effects, and an optional <code class="lang-kotlin">TelnetFailure</code>. Rejected arguments leave an otherwise healthy engine or session unchanged. Protocol and transport failures terminate a session.  <code class="lang-kotlin">TelnetFailureCode</code> provides named categories; messages are diagnostic text, not a machine-readable interface. Internal operational exceptions are caught at the boundary. Coroutine cancellation retains its standard Kotlin behavior and propagates <code class="lang-kotlin">CancellationException</code>.</p>
+      <h2 class="">Ktor session</h2>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val result = connectTelnet(<br>    scope = sessionScope,<br>    host = host,<br>    config = TelnetConfig(<br>        terminalTypes = listOf(&quot;xterm-256color&quot;), // only if the emulator supports it<br>        columns = 80,<br>        rows = 24,<br>        profile = TelnetProfile.INTERACTIVE,<br>    ),<br>    ioContext = ioDispatcher,<br>)<br>when (result) {<br>    is TelnetOutcome.Failure -&gt; handleFailure(result.error.code, result.error.message)<br>    is TelnetOutcome.Success -&gt; {<br>        val session = result.value<br>        while (true) {<br>            when (val received = session.receive()) {<br>                is TelnetOutcome.Failure -&gt; {<br>                    handleFailure(received.error.code, received.error.message)<br>                    break<br>                }<br>                is TelnetOutcome.Success -&gt; when (val input = received.value) {<br>                    null -&gt; break<br>                    is TelnetInput.Data -&gt; consumeApplicationBytes(input.bytes)<br>                    is TelnetInput.EchoChanged -&gt; updateInputEchoPolicy(input.localEcho)<br>                    is TelnetInput.CharsetAgreed -&gt; recordCharsetAgreement(input.name)<br>                    TelnetInput.EndOfRecord -&gt; recordBoundary()<br>                    TelnetInput.GoAhead -&gt; goAheadBoundary()<br>                    is TelnetInput.Diagnostic -&gt; recordDiagnostic(input.message)<br>                }<br>            }<br>        }<br>        session.close()<br>    }<br>}</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">Port defaults to 23; connection timeout defaults to ten seconds. An operation's own connection timeout returns <code class="lang-kotlin">CONNECT_TIMEOUT</code>; cancellation by its caller or parent scope propagates normally. A session owns and closes its transport, socket, and selector. One coroutine consumes <code class="lang-kotlin">receive</code>; concurrent receivers throw <code class="lang-kotlin">IllegalStateException</code>. A successful receive with a null value means EOF after preceding data/events have been drained.</p>
+      <p class="paragraph"><code class="lang-kotlin">write</code> accepts application bytes and handles IAC quoting and NVT conversion. It copies accepted chunks and acknowledges backend completion. Large writes are split into 8 KiB chunks; competing operations may be accepted between them. Encode application text in the consumer. <code class="lang-kotlin">flush</code> is a backend barrier, not a peer acknowledgment. Use <code class="lang-kotlin">carriageReturn</code> for keyboard Enter; a trailing raw CR from <code class="lang-kotlin">write</code> is retained for pairing until another write or a barrier resolves it.</p>
+      <h2 class="">Supply your own bytes or transport</h2>
+      <div class="sample-container">
+        <pre><code class="block lang-kotlin" theme="idea">val engine = createTelnetEngine(TelnetConfig())<br>consumeEffects(engine.start())<br>while (incomingBuffer.hasRemaining()) {<br>    val step = engine.feed(incomingBuffer) // java.nio.ByteBuffer<br>    consumeEffects(step) // dispatch effects in order, including outbound frames<br>    if (step.failure != null) break<br>}<br>consumeEffects(engine.finish()) // at peer EOF, not at each read boundary</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph">The same engine accepts <code class="lang-kotlin">ByteArray</code> slices. Each feed consumes at most 8 KiB and reports its exact consumption. Buffer position advances, limit stays unchanged, and direct/read-only buffers are supported. Returned arrays belong to their recipient; caller buffers are never retained. Use the engine on a single owner and process every outbound effect; it performs no I/O.</p>
+      <p class="paragraph">For coroutine coordination over another backend, implement <code class="lang-kotlin">TelnetTransport</code> and call <code class="lang-kotlin">openTelnetSession(scope, transport, config)</code>. Reads may be partial, return -1 at EOF, and must honor their destination slice. Writes finish their entire source slice. <code class="lang-kotlin">close</code> must unblock pending I/O. Backend exceptions are translated into returned transport failures by the session.</p>
+      <h2 class="">Supported protocol</h2>
+      <p class="paragraph">The library provides RFC 1143 negotiation in both directions, directional BINARY, remote ECHO, SGA, TTYPE, remote EOR, NAWS, and opt-in fixed-charset CHARSET. Passive startup is the default. Interactive startup requests BINARY both ways and offers TTYPE, NAWS, and SGA.</p>
+      <p class="paragraph">Strict NVT ASCII is the default. Select <code class="lang-kotlin">EIGHT_BIT_COMPATIBILITY</code> explicitly for legacy nonbinary eight-bit servers. Bare LF is preserved unless <code class="lang-kotlin">LF_TO_CRLF</code> is selected. Binary mode still interprets commands and quotes IAC.</p>
+      <p class="paragraph">CHARSET only agrees to <code class="lang-kotlin">config.charset</code>; it never changes a decoder. Request the local CHARSET option explicitly to offer that charset; incoming requests can also initiate agreement. Agreement requires BINARY both ways. Translation tables are refused. Pending outbound text has byte limits and a configurable ten-second deadline. Echo events describe negotiation; the consumer implements local display echo and user overrides.</p>
+      <p class="paragraph">Input/output byte budgets default to 256 KiB each, SB payloads to 64 KiB, and control output to a separate 32 KiB reserve. Queue entry counts are also bounded. Explicit close attempts an ordered flush and interrupts a stalled writer after <code class="lang-kotlin">closeTimeoutMillis</code> (one second by default).  Budget pressure suspends producers without dropping data; negotiation saturation or oversized SB fails explicitly. Read buffers and one bounded engine effect batch add fixed, bounded overhead beyond application queue budgets.</p>
+      <p class="paragraph">Optional extensions, dynamic charset switching, server mode, compression, TLS, TCP urgent-data SYNCH, and a byte-only adapter are unsupported. Ordinary in-band DATA MARK is not offered as a substitute for SYNCH.</p>
+      <h2 class="">Development and releases</h2>
+      <div class="sample-container">
+        <pre><code class="block lang-sh" theme="idea">./gradlew verify<br>./gradlew :telnetlib:test :telnetlib-ktor:test<br>./gradlew :telnetlib:metalavaGenerateSignature :telnetlib-ktor:metalavaGenerateSignature<br>PYTHONPATH=.github/scripts python3 -m unittest discover -s .github/scripts/tests -v<br>actionlint</code></pre>
+<span class="copy-tooltip">
+          <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
+<span class="copy-icon"></span></span></div>
+      <p class="paragraph"><code class="lang-kotlin">verify</code> includes formatting, tests, API signature/compatibility checks, coverage, documentation, and unsigned local Maven publication assembly under <code class="lang-kotlin">build/repository</code>.</p>
+    </div>
+    <h2 class="">All modules:</h2>
+    <div class="table"><a data-name="1132545178%2FMain%2F0" anchor-label="ConnectBot Telnet Ktor Backend" id="1132545178%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row table-row_multimodule">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="telnetlib-ktor/index.html">ConnectBot Telnet Ktor Backend</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1132545178%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+<a data-name="-964363667%2FMain%2F0" anchor-label="ConnectBot Telnet Library" id="-964363667%2FMain%2F0" data-filterable-set=""></a>
+      <div class="table-row table-row_multimodule">
+        <div class="main-subrow ">
+          <div class="w-100"><span class="inline-flex">
+              <div><a href="telnetlib/index.html">ConnectBot Telnet Library</a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-964363667%2FMain%2F0"></span>
+                <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+              </span></span></div>
+          <div><span class="brief-comment"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <div class="footer--container">
+            <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+            <div class="footer--content">
+                <div>
+                    <span>Generated by </span>
+                    <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                        Dokka
+                    </a>
+                    <div>Copyright Kenny Root</div>
+                    <div>
+                        <a class="footer--link" id="markdown-link" href="index.md">View as Markdown</a>
+                        <script>
+                            document.getElementById("markdown-link").href =
+                                location.pathname.split("/").pop().replace(/\.html$/, ".md") || "index.md";
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

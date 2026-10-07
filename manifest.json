@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "versions": {
+    "main": {
+      "published": {
+        "commit": "3777dc94a906a79bb2cebfb4c87de590a1e1f682",
+        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "policy": 1
+      },
+      "attempt": {
+        "commit": "3777dc94a906a79bb2cebfb4c87de590a1e1f682",
+        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "policy": 1,
+        "status": "success"
+      }
+    },
+    "v0.1.0": {
+      "published": {
+        "commit": "117e9be3d3bee3b587c46619efdde91a8a1cac9e",
+        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "policy": 1
+      },
+      "attempt": {
+        "commit": "117e9be3d3bee3b587c46619efdde91a8a1cac9e",
+        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "policy": 1,
+        "status": "success"
+      }
+    }
+  }
+}
