@@ -3,10 +3,6 @@
 A Kotlin/JVM Telnet **client** library with a byte-driven engine, an ordered
 coroutine session, and an optional Ktor TCP backend.
 
-[Documentation](https://telnetlib.connectbot.org) includes the development version
-from `main` and every tagged release, with HTML and Markdown API references for
-both modules.
-
 ## Dependencies
 
 ```kotlin
