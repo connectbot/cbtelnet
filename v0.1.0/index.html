@@ -31,6 +31,10 @@
 <script type="text/javascript" src="scripts/main.js" defer="defer"></script>
 <script type="text/javascript" src="scripts/prism.js" async="async"></script>
 <script type="text/javascript" src="ui-kit/ui-kit.min.js" defer="defer"></script>
+<!-- BEGIN DOCS NAVIGATION -->
+<link rel="stylesheet" href="https://telnetlib.connectbot.org/docs-version.css">
+<script src="https://telnetlib.connectbot.org/docs-version.js" defer data-docs-root="https://telnetlib.connectbot.org/" data-docs-version="v0.1.0"></script>
+<!-- END DOCS NAVIGATION -->
 </head>
 <body>
 <div class="root">
@@ -42,8 +46,7 @@
                 type="button">Toggle table of contents
         </button>
         <div class="navigation-controls--break ui-kit_mobile-only"></div>
-        <div class="library-version" id="library-version">
-v0.1.0        </div>
+        <div class="library-version" id="library-version"><label class="docs-version-label">Version <select id="docs-version" aria-label="Documentation version"><option value="v0.1.0" selected>v0.1.0</option><option value="main">main</option></select></label></div>
         <div class="navigation-controls">
             <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
                     type="button">Switch theme
@@ -150,6 +153,232 @@ v0.1.0        </div>
       </div>
     </div>
   </div>
+<!-- BEGIN DOCS API CHANGES -->
+<section id="api-changes"><h2>New and changed APIs</h2>
+<p>First release; public APIs listed below.</p>
+<h3>Telnet</h3>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-newline-policy/index.html"><code class="language-kotlin">org.connectbot.telnetlib.NewlinePolicy</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-newline-policy/-l-f_-t-o_-c-r-l-f/index.html"><code class="language-kotlin">LF_TO_CRLF</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-newline-policy/-p-r-e-s-e-r-v-e_-l-f/index.html"><code class="language-kotlin">PRESERVE_LF</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-newline-policy/index.html"><code class="language-kotlin">enum NewlinePolicy : Enum&lt;NewlinePolicy&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-non-binary-policy/index.html"><code class="language-kotlin">org.connectbot.telnetlib.NonBinaryPolicy</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-non-binary-policy/-e-i-g-h-t_-b-i-t_-c-o-m-p-a-t-i-b-i-l-i-t-y/index.html"><code class="language-kotlin">EIGHT_BIT_COMPATIBILITY</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-non-binary-policy/-s-t-r-i-c-t_-a-s-c-i-i/index.html"><code class="language-kotlin">STRICT_ASCII</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-non-binary-policy/index.html"><code class="language-kotlin">enum NonBinaryPolicy : Enum&lt;NonBinaryPolicy&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-command/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetCommand</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-a-b-o-r-t_-o-u-t-p-u-t/index.html"><code class="language-kotlin">ABORT_OUTPUT</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-a-r-e_-y-o-u_-t-h-e-r-e/index.html"><code class="language-kotlin">ARE_YOU_THERE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-b-r-e-a-k/index.html"><code class="language-kotlin">BREAK</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-d-a-t-a_-m-a-r-k/index.html"><code class="language-kotlin">DATA_MARK</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-e-r-a-s-e_-c-h-a-r-a-c-t-e-r/index.html"><code class="language-kotlin">ERASE_CHARACTER</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-e-r-a-s-e_-l-i-n-e/index.html"><code class="language-kotlin">ERASE_LINE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-g-o_-a-h-e-a-d/index.html"><code class="language-kotlin">GO_AHEAD</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-i-n-t-e-r-r-u-p-t_-p-r-o-c-e-s-s/index.html"><code class="language-kotlin">INTERRUPT_PROCESS</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/-n-o-p/index.html"><code class="language-kotlin">NOP</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/code.html"><code class="language-kotlin">val code: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-command/index.html"><code class="language-kotlin">enum TelnetCommand : Enum&lt;TelnetCommand&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-config/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetConfig</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/-telnet-config.html"><code class="language-kotlin">constructor(terminalTypes: List&lt;String&gt; = listOf(&quot;UNKNOWN&quot;), columns: Int = 0, rows: Int = 0, profile: TelnetProfile = TelnetProfile.PASSIVE, nonBinaryPolicy: NonBinaryPolicy = NonBinaryPolicy.STRICT_ASCII, newlinePolicy: NewlinePolicy = NewlinePolicy.PRESERVE_LF, consumeRecords: Boolean = false, charset: String? = null, maxSubnegotiationBytes: Int = 64 * 1024, inputBudgetBytes: Int = 256 * 1024, outputBudgetBytes: Int = 256 * 1024, maxPendingEvents: Int = 8192, controlBudgetBytes: Int = 32 * 1024, charsetTimeoutMillis: Long, closeTimeoutMillis: Long)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/charset.html"><code class="language-kotlin">val charset: String?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/charset-timeout-millis.html"><code class="language-kotlin">val charsetTimeoutMillis: Long</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/close-timeout-millis.html"><code class="language-kotlin">val closeTimeoutMillis: Long</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/columns.html"><code class="language-kotlin">val columns: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/consume-records.html"><code class="language-kotlin">val consumeRecords: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/control-budget-bytes.html"><code class="language-kotlin">val controlBudgetBytes: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/input-budget-bytes.html"><code class="language-kotlin">val inputBudgetBytes: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/max-pending-events.html"><code class="language-kotlin">val maxPendingEvents: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/max-subnegotiation-bytes.html"><code class="language-kotlin">val maxSubnegotiationBytes: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/newline-policy.html"><code class="language-kotlin">val newlinePolicy: NewlinePolicy</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/non-binary-policy.html"><code class="language-kotlin">val nonBinaryPolicy: NonBinaryPolicy</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/output-budget-bytes.html"><code class="language-kotlin">val outputBudgetBytes: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/profile.html"><code class="language-kotlin">val profile: TelnetProfile</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/rows.html"><code class="language-kotlin">val rows: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/terminal-types.html"><code class="language-kotlin">val terminalTypes: List&lt;String&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-config/index.html"><code class="language-kotlin">class TelnetConfig(terminalTypes: List&lt;String&gt; = listOf(&quot;UNKNOWN&quot;), val columns: Int = 0, val rows: Int = 0, val profile: TelnetProfile = TelnetProfile.PASSIVE, val nonBinaryPolicy: NonBinaryPolicy = NonBinaryPolicy.STRICT_ASCII, val newlinePolicy: NewlinePolicy = NewlinePolicy.PRESERVE_LF, val consumeRecords: Boolean = false, val charset: String? = null, val maxSubnegotiationBytes: Int = 64 * 1024, val inputBudgetBytes: Int = 256 * 1024, val outputBudgetBytes: Int = 256 * 1024, val maxPendingEvents: Int = 8192, val controlBudgetBytes: Int = 32 * 1024, val charsetTimeoutMillis: Long, val closeTimeoutMillis: Long)</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-direction/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetDirection</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-direction/-l-o-c-a-l/index.html"><code class="language-kotlin">LOCAL</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-direction/-r-e-m-o-t-e/index.html"><code class="language-kotlin">REMOTE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-direction/index.html"><code class="language-kotlin">enum TelnetDirection : Enum&lt;TelnetDirection&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEffect</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/index.html"><code class="language-kotlin">sealed interface TelnetEffect</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-input/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEffect.Input</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-input/-input.html"><code class="language-kotlin">constructor(value: TelnetInput)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-input/value.html"><code class="language-kotlin">val value: TelnetInput</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-input/index.html"><code class="language-kotlin">data class Input(val value: TelnetInput) : TelnetEffect</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-outbound/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEffect.Outbound</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-outbound/-outbound.html"><code class="language-kotlin">constructor(bytes: ByteArray)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-outbound/bytes.html"><code class="language-kotlin">val bytes: ByteArray</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-outbound/index.html"><code class="language-kotlin">data class Outbound(val bytes: ByteArray) : TelnetEffect</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-state-changed/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEffect.StateChanged</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-state-changed/-state-changed.html"><code class="language-kotlin">constructor(snapshot: TelnetSnapshot)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-state-changed/snapshot.html"><code class="language-kotlin">val snapshot: TelnetSnapshot</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-effect/-state-changed/index.html"><code class="language-kotlin">data class StateChanged(val snapshot: TelnetSnapshot) : TelnetEffect</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEngine</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/carriage-return.html"><code class="language-kotlin">fun carriageReturn(): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/feed.html"><code class="language-kotlin">fun feed(buffer: ByteBuffer): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/feed.html"><code class="language-kotlin">fun feed(bytes: ByteArray, offset: Int = 0, length: Int = bytes.size - offset): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/finish.html"><code class="language-kotlin">fun finish(): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/flush.html"><code class="language-kotlin">fun flush(): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/is-enabled.html"><code class="language-kotlin">fun isEnabled(option: TelnetOption, direction: TelnetDirection): Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/request-option.html"><code class="language-kotlin">fun requestOption(option: TelnetOption, direction: TelnetDirection, enable: Boolean): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/resize.html"><code class="language-kotlin">fun resize(columns: Int, rows: Int): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/send-command.html"><code class="language-kotlin">fun sendCommand(command: TelnetCommand): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/start.html"><code class="language-kotlin">fun start(): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/timeout-charset.html"><code class="language-kotlin">fun timeoutCharset(): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/write.html"><code class="language-kotlin">fun write(bytes: ByteArray, offset: Int = 0, length: Int = bytes.size - offset): TelnetResult</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/-companion/index.html"><code class="language-kotlin">object Companion</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/config.html"><code class="language-kotlin">val config: TelnetConfig</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/snapshot.html"><code class="language-kotlin">val snapshot: TelnetSnapshot</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/index.html"><code class="language-kotlin">class TelnetEngine</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/-companion/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetEngine.Companion</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/-companion/-c-h-u-n-k_-s-i-z-e.html"><code class="language-kotlin">const val CHUNK_SIZE: Int = 8192</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-engine/-companion/index.html"><code class="language-kotlin">object Companion</code></a></li>
+</ul>
+<h4><code class="language-kotlin">org.connectbot.telnetlib.TelnetEngineKt</code></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/create-telnet-engine.html"><code class="language-kotlin">fun createTelnetEngine(config: TelnetConfig = TelnetConfig()): TelnetEngine</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-failure/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetFailure</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure/-telnet-failure.html"><code class="language-kotlin">constructor(code: TelnetFailureCode, message: String)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure/code.html"><code class="language-kotlin">val code: TelnetFailureCode</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure/message.html"><code class="language-kotlin">val message: String</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure/index.html"><code class="language-kotlin">data class TelnetFailure(val code: TelnetFailureCode, val message: String)</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetFailureCode</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-b-u-f-f-e-r_-l-i-m-i-t/index.html"><code class="language-kotlin">BUFFER_LIMIT</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-c-h-a-r-s-e-t_-t-i-m-e-o-u-t/index.html"><code class="language-kotlin">CHARSET_TIMEOUT</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-c-l-o-s-e-d/index.html"><code class="language-kotlin">CLOSED</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-c-o-n-n-e-c-t_-t-i-m-e-o-u-t/index.html"><code class="language-kotlin">CONNECT_TIMEOUT</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.html"><code class="language-kotlin">INTERNAL_ERROR</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-n-o-n_-a-s-c-i-i_-d-a-t-a/index.html"><code class="language-kotlin">NON_ASCII_DATA</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-p-r-o-t-o-c-o-l_-e-r-r-o-r/index.html"><code class="language-kotlin">PROTOCOL_ERROR</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-t-r-a-n-s-p-o-r-t_-e-r-r-o-r/index.html"><code class="language-kotlin">TRANSPORT_ERROR</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/-u-n-s-u-p-p-o-r-t-e-d_-o-p-e-r-a-t-i-o-n/index.html"><code class="language-kotlin">UNSUPPORTED_OPERATION</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-failure-code/index.html"><code class="language-kotlin">enum TelnetFailureCode : Enum&lt;TelnetFailureCode&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/index.html"><code class="language-kotlin">sealed interface TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-charset-agreed/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.CharsetAgreed</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-charset-agreed/-charset-agreed.html"><code class="language-kotlin">constructor(name: String)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-charset-agreed/name.html"><code class="language-kotlin">val name: String</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-charset-agreed/index.html"><code class="language-kotlin">data class CharsetAgreed(val name: String) : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-data/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.Data</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-data/-data.html"><code class="language-kotlin">constructor(bytes: ByteArray)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-data/bytes.html"><code class="language-kotlin">val bytes: ByteArray</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-data/index.html"><code class="language-kotlin">data class Data(val bytes: ByteArray) : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-diagnostic/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.Diagnostic</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-diagnostic/-diagnostic.html"><code class="language-kotlin">constructor(message: String)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-diagnostic/message.html"><code class="language-kotlin">val message: String</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-diagnostic/index.html"><code class="language-kotlin">data class Diagnostic(val message: String) : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-echo-changed/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.EchoChanged</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-echo-changed/-echo-changed.html"><code class="language-kotlin">constructor(localEcho: Boolean)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-echo-changed/local-echo.html"><code class="language-kotlin">val localEcho: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-echo-changed/index.html"><code class="language-kotlin">data class EchoChanged(val localEcho: Boolean) : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-end-of-record/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.EndOfRecord</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-end-of-record/index.html"><code class="language-kotlin">data object EndOfRecord : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-go-ahead/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetInput.GoAhead</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-input/-go-ahead/index.html"><code class="language-kotlin">data object GoAhead : TelnetInput</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-option/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetOption</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-b-i-n-a-r-y/index.html"><code class="language-kotlin">BINARY</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-c-h-a-r-s-e-t/index.html"><code class="language-kotlin">CHARSET</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-e-c-h-o/index.html"><code class="language-kotlin">ECHO</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-e-o-r/index.html"><code class="language-kotlin">EOR</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-n-a-w-s/index.html"><code class="language-kotlin">NAWS</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-s-g-a/index.html"><code class="language-kotlin">SGA</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/-t-t-y-p-e/index.html"><code class="language-kotlin">TTYPE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/code.html"><code class="language-kotlin">val code: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-option/index.html"><code class="language-kotlin">enum TelnetOption : Enum&lt;TelnetOption&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetOutcome</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/index.html"><code class="language-kotlin">sealed interface TelnetOutcome&lt;out T&gt;</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-failure/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetOutcome.Failure</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-failure/-failure.html"><code class="language-kotlin">constructor(error: TelnetFailure)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-failure/error.html"><code class="language-kotlin">val error: TelnetFailure</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-failure/index.html"><code class="language-kotlin">data class Failure(val error: TelnetFailure) : TelnetOutcome&lt;Nothing&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-success/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetOutcome.Success</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-success/-success.html"><code class="language-kotlin">constructor(value: T)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-success/value.html"><code class="language-kotlin">val value: T</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-outcome/-success/index.html"><code class="language-kotlin">data class Success&lt;T&gt;(val value: T) : TelnetOutcome&lt;T&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-profile/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetProfile</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-profile/-i-n-t-e-r-a-c-t-i-v-e/index.html"><code class="language-kotlin">INTERACTIVE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-profile/-p-a-s-s-i-v-e/index.html"><code class="language-kotlin">PASSIVE</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-profile/index.html"><code class="language-kotlin">enum TelnetProfile : Enum&lt;TelnetProfile&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-result/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetResult</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-result/-telnet-result.html"><code class="language-kotlin">constructor(consumed: Int, effects: List&lt;TelnetEffect&gt;, failure: TelnetFailure? = null)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-result/consumed.html"><code class="language-kotlin">val consumed: Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-result/effects.html"><code class="language-kotlin">val effects: List&lt;TelnetEffect&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-result/failure.html"><code class="language-kotlin">val failure: TelnetFailure?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-result/index.html"><code class="language-kotlin">data class TelnetResult(val consumed: Int, val effects: List&lt;TelnetEffect&gt;, val failure: TelnetFailure? = null)</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-session/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetSession</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/carriage-return.html"><code class="language-kotlin">abstract suspend fun carriageReturn(): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/close.html"><code class="language-kotlin">abstract suspend fun close(): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/flush.html"><code class="language-kotlin">abstract suspend fun flush(): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/get-local-socket-address.html"><code class="language-kotlin">open fun getLocalSocketAddress(): InetSocketAddress?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/receive.html"><code class="language-kotlin">abstract suspend fun receive(): TelnetOutcome&lt;TelnetInput?&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/request-option.html"><code class="language-kotlin">abstract suspend fun requestOption(option: TelnetOption, direction: TelnetDirection, enable: Boolean): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/resize.html"><code class="language-kotlin">abstract suspend fun resize(columns: Int, rows: Int): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/send-command.html"><code class="language-kotlin">abstract suspend fun sendCommand(command: TelnetCommand): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/write.html"><code class="language-kotlin">abstract suspend fun write(data: ByteArray, offset: Int = 0, length: Int = data.size - offset): TelnetOutcome&lt;Unit&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/state.html"><code class="language-kotlin">abstract val state: StateFlow&lt;TelnetSnapshot&gt;</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-session/index.html"><code class="language-kotlin">interface TelnetSession</code></a></li>
+</ul>
+<h4><code class="language-kotlin">org.connectbot.telnetlib.TelnetSessionKt</code></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/open-telnet-session.html"><code class="language-kotlin">fun openTelnetSession(scope: CoroutineScope, transport: TelnetTransport, config: TelnetConfig = TelnetConfig(), workerContext: CoroutineContext = scope.coroutineContext.minusKey(Job)): TelnetSession</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetSnapshot</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/-telnet-snapshot.html"><code class="language-kotlin">constructor(status: TelnetStatus = TelnetStatus.OPEN, localEcho: Boolean = true, incomingBinary: Boolean = false, outgoingBinary: Boolean = false, charset: String? = null, charsetPending: Boolean = false, failure: TelnetFailure? = null)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/charset.html"><code class="language-kotlin">val charset: String?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/charset-pending.html"><code class="language-kotlin">val charsetPending: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/failure.html"><code class="language-kotlin">val failure: TelnetFailure?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/incoming-binary.html"><code class="language-kotlin">val incomingBinary: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/local-echo.html"><code class="language-kotlin">val localEcho: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/outgoing-binary.html"><code class="language-kotlin">val outgoingBinary: Boolean</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/status.html"><code class="language-kotlin">val status: TelnetStatus</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-snapshot/index.html"><code class="language-kotlin">data class TelnetSnapshot(val status: TelnetStatus = TelnetStatus.OPEN, val localEcho: Boolean = true, val incomingBinary: Boolean = false, val outgoingBinary: Boolean = false, val charset: String? = null, val charsetPending: Boolean = false, val failure: TelnetFailure? = null)</code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-status/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetStatus</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/-c-a-n-c-e-l-l-e-d/index.html"><code class="language-kotlin">CANCELLED</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/-f-a-i-l-e-d/index.html"><code class="language-kotlin">FAILED</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/-l-o-c-a-l_-c-l-o-s-e-d/index.html"><code class="language-kotlin">LOCAL_CLOSED</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/-o-p-e-n/index.html"><code class="language-kotlin">OPEN</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/-p-e-e-r_-e-o-f/index.html"><code class="language-kotlin">PEER_EOF</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-status/index.html"><code class="language-kotlin">enum TelnetStatus : Enum&lt;TelnetStatus&gt; </code></a></li>
+</ul>
+<h4><a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/index.html"><code class="language-kotlin">org.connectbot.telnetlib.TelnetTransport</code></a></h4><ul>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/close.html"><code class="language-kotlin">abstract suspend fun close()</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/flush.html"><code class="language-kotlin">abstract suspend fun flush()</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/get-local-socket-address.html"><code class="language-kotlin">open fun getLocalSocketAddress(): InetSocketAddress?</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/read.html"><code class="language-kotlin">abstract suspend fun read(destination: ByteArray, offset: Int, length: Int): Int</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/write.html"><code class="language-kotlin">abstract suspend fun write(source: ByteArray, offset: Int, length: Int)</code></a></li>
+<li>Added: <a href="telnetlib/org.connectbot.telnetlib/-telnet-transport/index.html"><code class="language-kotlin">interface TelnetTransport</code></a></li>
+</ul>
+<h3>Ktor backend</h3>
+<h4><code class="language-kotlin">org.connectbot.telnetlib.ktor.KtorTelnetKt</code></h4><ul>
+<li>Added: <a href="telnetlib-ktor/org.connectbot.telnetlib.ktor/connect-telnet.html"><code class="language-kotlin">suspend fun connectTelnet(scope: CoroutineScope, host: String, port: Int = 23, config: TelnetConfig = TelnetConfig(), ioContext: CoroutineContext = Dispatchers.IO, connectTimeoutMillis: Long): TelnetOutcome&lt;TelnetSession&gt;</code></a></li>
+</ul>
+</section>
+<!-- END DOCS API CHANGES -->
 </div>
     <div class="footer">
         <div class="footer--container">

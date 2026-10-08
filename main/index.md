@@ -120,3 +120,19 @@ actionlint
 |---|
 | [ConnectBot Telnet Ktor Backend](telnetlib-ktor/index.md) |  |
 | [ConnectBot Telnet Library](telnetlib/index.md) |  |
+
+<!-- BEGIN DOCS API CHANGES -->
+## New and changed APIs
+
+Changes since v0.1.0.
+
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.0...eb5d740d35410acce402867d3896fb8825563f81)
+
+### Telnet
+
+No public API signature changes.
+
+### Ktor backend
+
+No public API signature changes.
+<!-- END DOCS API CHANGES -->

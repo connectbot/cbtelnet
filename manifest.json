@@ -3,13 +3,13 @@
   "versions": {
     "main": {
       "published": {
-        "commit": "3d9f1c2e16195b708aad6be86e00133f47c4bc82",
-        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "commit": "eb5d740d35410acce402867d3896fb8825563f81",
+        "config": "c5ac5cc14be8edced0f3cdfd58d8fe7e9976fa4e3e5866caed2df0b16b43992c",
         "policy": 1
       },
       "attempt": {
-        "commit": "3d9f1c2e16195b708aad6be86e00133f47c4bc82",
-        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "commit": "eb5d740d35410acce402867d3896fb8825563f81",
+        "config": "c5ac5cc14be8edced0f3cdfd58d8fe7e9976fa4e3e5866caed2df0b16b43992c",
         "policy": 1,
         "status": "success"
       }
@@ -17,12 +17,12 @@
     "v0.1.0": {
       "published": {
         "commit": "117e9be3d3bee3b587c46619efdde91a8a1cac9e",
-        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "config": "c5ac5cc14be8edced0f3cdfd58d8fe7e9976fa4e3e5866caed2df0b16b43992c",
         "policy": 1
       },
       "attempt": {
         "commit": "117e9be3d3bee3b587c46619efdde91a8a1cac9e",
-        "config": "5f9e9645f1454305781a83b04a3d21deac789e839f644812da78f377acaaad5a",
+        "config": "c5ac5cc14be8edced0f3cdfd58d8fe7e9976fa4e3e5866caed2df0b16b43992c",
         "policy": 1,
         "status": "success"
       }
