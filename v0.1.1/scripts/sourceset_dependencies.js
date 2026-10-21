@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":telnetlib/main":[],":telnetlib-ktor/main":[]}'

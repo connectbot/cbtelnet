@@ -128,9 +128,9 @@ actionlint
 <!-- BEGIN DOCS API CHANGES -->
 ## New and changed APIs
 
-Changes since v0.1.0.
+Changes since v0.1.1.
 
-[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.0...0fd07346430ac6aec4be8f5d0d94ac99afa54881)
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...854ba9634ed42b36f725aaf8afaf079dc34ee4bb)
 
 ### Telnet
 

@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:ConnectBot Telnet Library
+org.connectbot.telnetlib
+module:ConnectBot Telnet Ktor Backend
+org.connectbot.telnetlib.ktor
