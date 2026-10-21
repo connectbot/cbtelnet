@@ -34,9 +34,12 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.selects.select
 import kotlinx.coroutines.withContext
+import org.slf4j.LoggerFactory
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 import kotlin.coroutines.CoroutineContext
+
+private val logger = LoggerFactory.getLogger("org.connectbot.telnetlib.TelnetSession")
 
 /**
  * A duplex byte transport. Positive reads make progress; -1 is EOF, zero is only
@@ -322,6 +325,7 @@ private class CoroutineTelnetSession(
     init {
         sessionScope.launch(start = CoroutineStart.UNDISPATCHED) {
             try {
+                logger.info("Telnet session opened")
                 process(engine.start())
                 ownerLoop()
             } catch (e: CancellationException) {
@@ -704,6 +708,12 @@ private class CoroutineTelnetSession(
                 }
 
                 is TelnetEffect.StateChanged -> {
+                    logger.debug(
+                        "Telnet negotiation: incomingBinary={}, outgoingBinary={}, localEcho={}",
+                        effect.snapshot.incomingBinary,
+                        effect.snapshot.outgoingBinary,
+                        effect.snapshot.localEcho,
+                    )
                     mutableState.value = effect.snapshot
                 }
             }
@@ -752,6 +762,12 @@ private class CoroutineTelnetSession(
         if (closeError != null && failure == null && status != TelnetStatus.CANCELLED) {
             terminal = terminal!!.copy(status = TelnetStatus.FAILED, failure = asTelnetFailure(closeError).error)
             mutableState.value = terminal!!
+        }
+        val terminalFailure = mutableState.value.failure
+        if (terminalFailure != null) {
+            logger.warn("Telnet session failed ({})", terminalFailure.code, failure ?: closeError)
+        } else {
+            logger.info("Telnet session ended: {}", mutableState.value.status)
         }
         if (status == TelnetStatus.LOCAL_CLOSED) discardPendingExceptOffered()
         val closed = mutableState.value.failure?.let(::TelnetException) ?: TelnetClosedException("Session is $status")

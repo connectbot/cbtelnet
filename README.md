@@ -16,6 +16,13 @@ dependencies {
 Both coordinates share a version. The core depends on Kotlin coroutines and has
 no Ktor dependency. These coordinates describe the configured Maven publications.
 
+## Logging
+
+This library uses SLF4J logging adapter and applications should supply a logging
+provider to receive log messages from it. INFO records connection and session
+lifecycle, WARN records failures, and DEBUG records negotiation state. Application
+payload bytes are never logged.
+
 ## Explicit outcomes
 
 Operational failures are returned as `TelnetOutcome` values. Invalid
