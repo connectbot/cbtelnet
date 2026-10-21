@@ -40,8 +40,11 @@ import org.connectbot.telnetlib.TelnetOutcome
 import org.connectbot.telnetlib.TelnetSession
 import org.connectbot.telnetlib.TelnetTransport
 import org.connectbot.telnetlib.openTelnetSession
+import org.slf4j.LoggerFactory
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.coroutines.CoroutineContext
+
+private val logger = LoggerFactory.getLogger("org.connectbot.telnetlib.ktor.KtorTelnet")
 
 /**
  * Connects a child Telnet session using Ktor TCP. The session owns its socket and
@@ -75,6 +78,7 @@ suspend fun connectTelnet(
                 if (cause != null) cancel(CancellationException("Telnet owner cancelled", cause))
             }
         try {
+            logger.info("Connecting to {}:{}", host, port)
             val manager = SelectorManager(ioContext.minusKey(Job))
             selector = manager
             val connected =
@@ -83,6 +87,7 @@ suspend fun connectTelnet(
                     true
                 }
             if (connected == null) {
+                logger.warn("Telnet connection to {}:{} timed out after {} ms", host, port, connectTimeoutMillis)
                 return@coroutineScope TelnetOutcome.Failure(
                     TelnetFailure(TelnetFailureCode.CONNECT_TIMEOUT, "Telnet connection timed out"),
                 )
@@ -92,12 +97,14 @@ suspend fun connectTelnet(
             val transport = KtorTransport(socket!!, manager)
             val session = openTelnetSession(scope, transport, config, ioContext)
             transferred = true
+            logger.info("Connected to {}:{}", host, port)
             TelnetOutcome.Success(session)
         } catch (e: CancellationException) {
             throw e
         } catch (e: Exception) {
             currentCoroutineContext().ensureActive()
             scope.coroutineContext.ensureActive()
+            logger.warn("Could not connect to {}:{}", host, port, e)
             TelnetOutcome.Failure(
                 TelnetFailure(TelnetFailureCode.TRANSPORT_ERROR, "Could not connect to $host:$port: ${e.message}"),
             )

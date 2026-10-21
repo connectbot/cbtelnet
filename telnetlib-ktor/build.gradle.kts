@@ -28,6 +28,7 @@ kotlin {
 }
 
 dependencies {
+    implementation(libs.slf4j.api)
     api(project(":telnetlib"))
     implementation(libs.ktor.network)
     testImplementation(kotlin("test"))

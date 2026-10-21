@@ -27,8 +27,10 @@ kotlin {
 }
 
 dependencies {
+    implementation(libs.slf4j.api)
     api(libs.coroutines.core)
     testImplementation(kotlin("test"))
+    testImplementation(libs.logback.classic)
     testImplementation(libs.coroutines.test)
     testImplementation(libs.junit.api)
     testRuntimeOnly(libs.junit.engine)
