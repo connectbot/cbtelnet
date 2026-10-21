@@ -16,6 +16,10 @@ dependencies {
 
 Both coordinates share a version. The core depends on Kotlin coroutines and has no Ktor dependency. These coordinates describe the configured Maven publications.
 
+## Logging
+
+This library uses SLF4J logging adapter and applications should supply a logging provider to receive log messages from it. INFO records connection and session lifecycle, WARN records failures, and DEBUG records negotiation state. Application payload bytes are never logged.
+
 ## Explicit outcomes
 
 Operational failures are returned as `TelnetOutcome` values. Invalid configuration, byte slices, dimensions, and endpoint arguments throw `IllegalArgumentException`; invalid engine lifecycle and concurrent receivers throw `IllegalStateException`.  These are programming preconditions, following Kotlin's `require`/`check` conventions.  `TelnetConfig` validates when constructed. `createTelnetEngine` and `openTelnetSession` return their objects directly; `connectTelnet` returns an outcome because connection can fail during normal use.
@@ -126,7 +130,7 @@ actionlint
 
 Changes since v0.1.0.
 
-[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.0...eb5d740d35410acce402867d3896fb8825563f81)
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.0...e1714a3b765b644fe704d95298809b7bf96a8649)
 
 ### Telnet
 

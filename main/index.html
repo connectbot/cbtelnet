@@ -90,6 +90,8 @@
           <div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div>
 <span class="copy-icon"></span></span></div>
       <p class="paragraph">Both coordinates share a version. The core depends on Kotlin coroutines and has no Ktor dependency. These coordinates describe the configured Maven publications.</p>
+      <h2 class="">Logging</h2>
+      <p class="paragraph">This library uses SLF4J logging adapter and applications should supply a logging provider to receive log messages from it. INFO records connection and session lifecycle, WARN records failures, and DEBUG records negotiation state. Application payload bytes are never logged.</p>
       <h2 class="">Explicit outcomes</h2>
       <p class="paragraph">Operational failures are returned as <code class="lang-kotlin">TelnetOutcome</code> values. Invalid configuration, byte slices, dimensions, and endpoint arguments throw <code class="lang-kotlin">IllegalArgumentException</code>; invalid engine lifecycle and concurrent receivers throw <code class="lang-kotlin">IllegalStateException</code>.  These are programming preconditions, following Kotlin's <code class="lang-kotlin">require</code>/<code class="lang-kotlin">check</code> conventions.  <code class="lang-kotlin">TelnetConfig</code> validates when constructed. <code class="lang-kotlin">createTelnetEngine</code> and <code class="lang-kotlin">openTelnetSession</code> return their objects directly; <code class="lang-kotlin">connectTelnet</code> returns an outcome because connection can fail during normal use.</p>
       <div class="sample-container">
@@ -156,7 +158,7 @@
 <!-- BEGIN DOCS API CHANGES -->
 <section id="api-changes"><h2>New and changed APIs</h2>
 <p>Changes since v0.1.0.</p>
-<p><a href="https://github.com/connectbot/cbtelnet/compare/v0.1.0...eb5d740d35410acce402867d3896fb8825563f81">Compare source versions</a></p>
+<p><a href="https://github.com/connectbot/cbtelnet/compare/v0.1.0...e1714a3b765b644fe704d95298809b7bf96a8649">Compare source versions</a></p>
 <h3>Telnet</h3>
 <p>No public API signature changes.</p>
 <h3>Ktor backend</h3>
