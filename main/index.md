@@ -130,7 +130,7 @@ actionlint
 
 Changes since v0.1.1.
 
-[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...854ba9634ed42b36f725aaf8afaf079dc34ee4bb)
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...069e5ccd800ee4a7b5fe4815af1b299450c3334c)
 
 ### Telnet
 
