@@ -5,6 +5,14 @@
   ],
   "packageRules": [
     {
+      "description": "Look up Vanniktech releases by implementation coordinates: Renovate skips Gradle plugin markers on Maven Central",
+      "matchManagers": ["gradle"],
+      "matchDatasources": ["maven"],
+      "matchDepNames": ["com.vanniktech.maven.publish"],
+      "overridePackageName": "com.vanniktech:gradle-maven-publish-plugin",
+      "registryUrls": ["https://repo.maven.apache.org/maven2"]
+    },
+    {
       "matchPackageNames": ["connectbot/*", "kruton/*"],
       "minimumReleaseAge": null
     },
