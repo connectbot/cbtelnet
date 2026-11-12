@@ -3,7 +3,7 @@
 # TelnetFailureCode
 
 [jvm]\
-enum [TelnetFailureCode](index.md) : [Enum](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html)&lt;[TelnetFailureCode](index.md)&gt; 
+enum class [TelnetFailureCode](index.md) : [Enum](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-enum/index.html)&lt;[TelnetFailureCode](index.md)&gt; 
 
 Stable failure categories returned at public API boundaries.
 
@@ -21,17 +21,22 @@ Stable failure categories returned at public API boundaries.
 | [CHARSET_TIMEOUT](-c-h-a-r-s-e-t_-t-i-m-e-o-u-t/index.md) | [jvm]<br>[CHARSET_TIMEOUT](-c-h-a-r-s-e-t_-t-i-m-e-o-u-t/index.md) |
 | [INTERNAL_ERROR](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md) | [jvm]<br>[INTERNAL_ERROR](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md) |
 
-## Properties
+## Companion properties
 
 | Name | Summary |
 |---|---|
-| [entries](entries.md) | [jvm]<br>val [entries](entries.md): [EnumEntries](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.enums/-enum-entries/index.html)&lt;[TelnetFailureCode](index.md)&gt;<br>Returns a representation of an immutable list of all enum entries, in the order they're declared. |
-| [name](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-372974862%2FProperties%2F-1317821935) | [jvm]<br>val [name](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-372974862%2FProperties%2F-1317821935): [String](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html) |
-| [ordinal](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-739389684%2FProperties%2F-1317821935) | [jvm]<br>val [ordinal](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-739389684%2FProperties%2F-1317821935): [Int](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html) |
+| [entries](entries.md) | [jvm]<br>val [entries](entries.md): [EnumEntries](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.enums/-enum-entries/index.html)&lt;[TelnetFailureCode](index.md)&gt;<br>Returns an immutable [kotlin.enums.EnumEntries](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.enums/-enum-entries/index.html) list containing the constants of this enum type, in the order they're declared. |
 
-## Functions
+## Companion functions
 
 | Name | Summary |
 |---|---|
 | [valueOf](value-of.md) | [jvm]<br>fun [valueOf](value-of.md)(value: [String](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html)): [TelnetFailureCode](index.md)<br>Returns the enum constant of this type with the specified name. The string must match exactly an identifier used to declare an enum constant in this type. (Extraneous whitespace characters are not permitted.) |
 | [values](values.md) | [jvm]<br>fun [values](values.md)(): [Array](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-array/index.html)&lt;[TelnetFailureCode](index.md)&gt;<br>Returns an array containing the constants of this enum type, in the order they're declared. |
+
+## Properties
+
+| Name | Summary |
+|---|---|
+| [name](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-372974862%2FProperties%2F-1317821935) | [jvm]<br>val [name](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-372974862%2FProperties%2F-1317821935): [String](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html) |
+| [ordinal](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-739389684%2FProperties%2F-1317821935) | [jvm]<br>val [ordinal](-i-n-t-e-r-n-a-l_-e-r-r-o-r/index.md#-739389684%2FProperties%2F-1317821935): [Int](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html) |
