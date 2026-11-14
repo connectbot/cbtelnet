@@ -130,7 +130,7 @@ actionlint
 
 Changes since v0.1.1.
 
-[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...e06e5e410feb486964fa4aa09702be271397de6c)
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...2deebcb8ac975211b6f44ebfaaf7e73a6b8e5dc2)
 
 ### Telnet
 
@@ -139,4 +139,14 @@ No public API signature changes.
 ### Ktor backend
 
 No public API signature changes.
+
+### Release notes
+
+Changes for library users since `0.1.1`.
+
+[Unreleased]: https://github.com/connectbot/cbtelnet/compare/v0.1.1...main
+[0.1.1]: https://github.com/connectbot/cbtelnet/compare/v0.1.0...v0.1.1
+[0.1.0]: https://github.com/connectbot/cbtelnet/releases/tag/v0.1.0
+
+[View changelog](https://github.com/connectbot/cbtelnet/blob/2deebcb8ac975211b6f44ebfaaf7e73a6b8e5dc2/CHANGELOG.md)
 <!-- END DOCS API CHANGES -->
