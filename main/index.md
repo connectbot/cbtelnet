@@ -130,7 +130,7 @@ actionlint
 
 Changes since v0.1.1.
 
-[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...2deebcb8ac975211b6f44ebfaaf7e73a6b8e5dc2)
+[Compare source versions](https://github.com/connectbot/cbtelnet/compare/v0.1.1...1d09a2dfab5f81949f969f2d50f30ae5c3782c92)
 
 ### Telnet
 
@@ -148,5 +148,5 @@ Changes for library users since `0.1.1`.
 [0.1.1]: https://github.com/connectbot/cbtelnet/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/connectbot/cbtelnet/releases/tag/v0.1.0
 
-[View changelog](https://github.com/connectbot/cbtelnet/blob/2deebcb8ac975211b6f44ebfaaf7e73a6b8e5dc2/CHANGELOG.md)
+[View changelog](https://github.com/connectbot/cbtelnet/blob/1d09a2dfab5f81949f969f2d50f30ae5c3782c92/CHANGELOG.md)
 <!-- END DOCS API CHANGES -->
